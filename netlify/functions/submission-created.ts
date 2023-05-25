@@ -21,19 +21,16 @@ const handler: Handler = async (
 ) => {
   const body: SubmissionBody = JSON.parse(event.body ? event.body : "");
   const { name, email, course, request } = body.payload.data;
-  console.log(body.payload);
 
-  if (request === "waitlist") {
-    await sendEmail({
-      from: "nevan@buttonschool.com",
-      to: email,
-      subject: "Test email",
-      template: "test",
-      parameters: {
-        name: name,
-      },
-    });
-  }
+  await sendEmail({
+    from: "nevan@buttonschool.com",
+    to: email,
+    subject: "Test email",
+    template: "test",
+    parameters: {
+      name: name,
+    },
+  });
 
   return {
     statusCode: 200,
