@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@netlify/emails": "^1.1.0",
+    "@netlify/functions": "^1.6.0",
     "astro": "^2.4.1"
   }
 }
